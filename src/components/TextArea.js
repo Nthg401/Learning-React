@@ -2,14 +2,13 @@ import React , {useState} from "react"
 import PropTypes from 'prop-types'
 
 
-
 export default function TextArea(props){
 
 const [text,setText] = useState("");
 
 
 const textchange = (event)=>{
-    console.log("value changed")
+    // console.log("value changed")
     setText(event.target.value)
 }
 
@@ -18,6 +17,7 @@ const btnupclicked = ()=>{
     // console.log("button clicked")
     let newtext = text.toUpperCase()
     setText(newtext) 
+    props.showAlert("Text has been converted to uppercase","success");
 }
 
 
@@ -25,18 +25,19 @@ const btnloclicked = ()=>{
     // console.log("button clicked")
     let newtext = text.toLowerCase()
     setText(newtext) 
+    props.showAlert("Text has been converted to lowercase","success");
 }
 
 const btnreclicked = ()=>{
     // console.log("button clicked")
     let newtext = ""
-    setText(newtext) 
+    setText(newtext)
+    props.showAlert("TextBox Has Been Reseted","success"); 
 }
 
 const btncopy = ()=>{
-    let textarea = document.getElementById("Textarea1");
-    textarea.select();
-    navigator.clipboard.writeText(textarea.value);
+    navigator.clipboard.writeText(text);
+    props.showAlert("Copied to the clipboard","success");
 }
 
 
