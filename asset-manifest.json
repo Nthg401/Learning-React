@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/Nthg401/Learning-React/static/js/main.7f50cb35.js",
-    "index.html": "/Nthg401/Learning-React/index.html",
-    "main.7f50cb35.js.map": "/Nthg401/Learning-React/static/js/main.7f50cb35.js.map"
+    "main.js": "/Learning-React/static/js/main.7f50cb35.js",
+    "index.html": "/Learning-React/index.html",
+    "main.7f50cb35.js.map": "/Learning-React/static/js/main.7f50cb35.js.map"
   },
   "entrypoints": [
     "static/js/main.7f50cb35.js"
