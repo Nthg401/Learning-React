@@ -2,6 +2,14 @@ import NavBar from "./components/NavBar";
 import TextArea from "./components/TextArea";
 import React ,{ useState } from "react";
 import Alert  from "./components/Alert";
+import About from "./components/About";
+import Home from "./components/Home";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default function App(){
   const [mode , setMode] = useState("light");
@@ -36,11 +44,20 @@ setTimeout (()=>{
 
   return(
     <>
+    <Router>
     <NavBar title="PR" about ="About Me" mode={mode} togglemode={togglemode} />
     <Alert alert={alert} />
-     <div className="container">
-    <TextArea mode={mode} showAlert={showAlert}/>
+     <div className="container my-5">
+     <Routes>
+        <Route path="/Home" element={<Home/>}>
+        </Route>
+          <Route path="/About" element={<About />}>
+          </Route>
+          <Route path="/TextArea" element={<TextArea mode={mode} showAlert={showAlert}/>}>
+          </Route>
+        </Routes>
     </div>
+    </Router>
     </> 
    );
 }
